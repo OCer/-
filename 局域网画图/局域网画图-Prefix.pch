@@ -1,0 +1,27 @@
+
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <CBExtension.h>
+    #import <AsyncSocket.h>
+#endif
+
+
+#define IMAGE_TRANSFER_PORT     7000
+
+// 通用参数
+#define kScreenHeight [[UIScreen mainScreen] bounds].size.height// 获取设备的物理高度
+#define kScreenWidth [[UIScreen mainScreen]  bounds].size.width // 获取设备的物理宽度
+
+#ifdef DEBUG // 程序处于开发阶段时，系统会自动定义好该宏
+#define Log(...) NSLog(__VA_ARGS__) // 自定义输出日志
+#else
+#define Log(...)
+#endif
